@@ -22,5 +22,5 @@ go build .
 
 ### Run go binary/executable
 ```
-go-gs -gs="<path to gs>"
+go-gs -config="./tmp/config.json" -worker=4 -thread=4 -path=<folder containing pdfs>
 ```
