@@ -14,3 +14,13 @@
 - Download ghostscript binaries or executable from the site https://ghostscript.com/releases/gsdnld.html
 - Update path variable to use Ghostscript (or specify binary/exe path in env variable) -- decide
 - install cgo for executing gs
+
+### Build go app
+```
+go build .
+```
+
+### Run go binary/executable
+```
+go-gs -gs="<path to gs>"
+```
