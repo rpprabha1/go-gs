@@ -6,9 +6,9 @@ import (
 	"io/ioutil"
 )
 
-func LoadConfig() m.Configs {
+func LoadConfig(cfgPath string) m.Configs {
 	var cfg m.Configs
-	raw, err := ioutil.ReadFile("")
+	raw, err := ioutil.ReadFile(cfgPath)
 	if err != nil {
 		panic("unable to parse config: " + err.Error())
 	}
