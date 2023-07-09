@@ -49,3 +49,12 @@ func GetFileContentType(filepath string) (string, error) {
 	fmt.Println("Content Type of file is: " + contentType)
 	return contentType, nil
 }
+
+func CreateNewDir(folderPath string) error {
+	err := os.Mkdir(folderPath, 0755)
+	if err != nil {
+		fmt.Println("Error creating directory:", err)
+		return err
+	}
+	return nil
+}
