@@ -5,10 +5,11 @@
 
 ## Todo List
 
-- [ ] adding Ghostscript details or binary
-- [ ] create codebase for go-gs
-- [ ] create workerpool and thread
+- [x] adding Ghostscript details or binary
+- [x] create codebase for go-gs
+- [x] create workerpool and thread
 - [ ] write tests
+- [ ] implement thread to control multiple pdf process simultaneously
 
 ### Ghostscript
 - Download ghostscript binaries or executable from the site https://ghostscript.com/releases/gsdnld.html
