@@ -46,7 +46,6 @@ func GetFileContentType(filepath string) (string, error) {
 		return "", err
 	}
 
-	fmt.Println("Content Type of file is: " + contentType)
 	return contentType, nil
 }
 

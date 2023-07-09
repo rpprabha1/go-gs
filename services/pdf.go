@@ -14,9 +14,8 @@ func PdfToJpg(cfg m.Configs) {
 	files := utils.ListFilesInDirectory(m.FOLDER_PATH)
 	wp := m.NewWorkerPool(m.WORKERS)
 	wp.Run()
-
-	for k, val := range files {
-		fmt.Println(k, val)
+	defer wp.Done()
+	for _, val := range files {
 		filePath := m.FOLDER_PATH + "/" + val.Name()
 		if fileType, err := utils.GetFileContentType(filePath); err == nil {
 			if fileType == "application/pdf" {
@@ -26,9 +25,7 @@ func PdfToJpg(cfg m.Configs) {
 				)
 			}
 		}
-
 	}
-
 }
 
 func convert(cfg m.Configs, filePath string) error {
@@ -49,6 +46,6 @@ func convert(cfg m.Configs, filePath string) error {
 		return err
 	}
 
-	fmt.Printf("Processed files: %q\n", out.String())
+	fmt.Println("Processed file: ", filePath)
 	return nil
 }
